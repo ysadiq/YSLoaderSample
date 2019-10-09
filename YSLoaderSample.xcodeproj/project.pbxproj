@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31E14EA4476AFE3C3605C447 /* libPods-YSLoaderSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
 		9997A3A4234D71C600787435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* ViewController.swift */; };
 		9997A3A7234D71C600787435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A5234D71C600787435 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSLoaderSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSample.debug.xcconfig"; path = "Target Support Files/Pods-YSLoaderSample/Pods-YSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9997A3A3234D71C600787435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		9997A3B2234D71C800787435 /* YSLoaderSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSLoaderSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3B6234D71C800787435 /* YSLoaderSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSLoaderSampleTests.swift; sourceTree = "<group>"; };
 		9997A3B8234D71C800787435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D7835CE5B4F2A7D1AE7DE5 /* Pods-YSLoaderSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSample.release.xcconfig"; path = "Target Support Files/Pods-YSLoaderSample/Pods-YSLoaderSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E14EA4476AFE3C3605C447 /* libPods-YSLoaderSample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F96A455D626B62755BD3D8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */,
+				C0D7835CE5B4F2A7D1AE7DE5 /* Pods-YSLoaderSample.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9997A395234D71C600787435 = {
 			isa = PBXGroup;
 			children = (
 				9997A3A0234D71C600787435 /* YSLoaderSample */,
 				9997A3B5234D71C800787435 /* YSLoaderSampleTests */,
 				9997A39F234D71C600787435 /* Products */,
+				7F96A455D626B62755BD3D8B /* Pods */,
+				F31AD872D2B0B1F57FF37AB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +113,14 @@
 			path = YSLoaderSampleTests;
 			sourceTree = "<group>";
 		};
+		F31AD872D2B0B1F57FF37AB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +128,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9997A3BB234D71C800787435 /* Build configuration list for PBXNativeTarget "YSLoaderSample" */;
 			buildPhases = (
+				7A9D033F463A8370FCB21230 /* [CP] Check Pods Manifest.lock */,
 				9997A39A234D71C600787435 /* Sources */,
 				9997A39B234D71C600787435 /* Frameworks */,
 				9997A39C234D71C600787435 /* Resources */,
@@ -191,6 +217,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7A9D033F463A8370FCB21230 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YSLoaderSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9997A39A234D71C600787435 /* Sources */ = {
@@ -358,6 +409,7 @@
 		};
 		9997A3BC234D71C800787435 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +428,7 @@
 		};
 		9997A3BD234D71C800787435 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0D7835CE5B4F2A7D1AE7DE5 /* Pods-YSLoaderSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
