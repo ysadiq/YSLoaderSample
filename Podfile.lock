@@ -1,9 +1,10 @@
 PODS:
   - Alamofire (4.9.0)
-  - MBProgressHUD (1.1.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - YSLoader (0.0.1):
     - Alamofire (~> 4.7)
-    - MBProgressHUD (~> 1.1.0)
+    - AlamofireImage (~> 3.5)
 
 DEPENDENCIES:
   - YSLoader (from `../libraries/YSLoader`)
@@ -11,7 +12,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://cdn.cocoapods.org/:
     - Alamofire
-    - MBProgressHUD
+    - AlamofireImage
 
 EXTERNAL SOURCES:
   YSLoader:
@@ -19,8 +20,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  YSLoader: 4a0357afaebab8a8984c1da1caa137624dffd960
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  YSLoader: d10e6a66606c7ae4bb52b3776137469b6d44ccb1
 
 PODFILE CHECKSUM: 4adfe40a8286084ee1e732cbdca29cba259994ec
 
