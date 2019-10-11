@@ -8,11 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="vodafone-regular.ttf">
-            <string>VodafoneRg-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Pinboard View Controller-->
         <scene sceneID="mAM-fE-tvZ">
@@ -27,43 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0Q-cu-Aud">
-                                <rect key="frame" x="0.0" y="47" width="375" height="605"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="620"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enT-DJ-5RA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="345" placeholderIntrinsicHeight="200" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2P-dH-lfZ">
-                                                <rect key="frame" x="20" y="27" width="335" height="153"/>
+                                                <rect key="frame" x="20" y="27" width="335" height="620"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="153" id="JZG-KG-61U"/>
-                                                </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PinboardTableViewCell" rowHeight="126" id="Cs0-cn-Eye" userLabel="PinboardTableViewCell" customClass="PinboardTableViewCell" customModule="YSLoaderSample" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="335" height="126"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PinboardTableViewCell" rowHeight="244" id="Cs0-cn-Eye" userLabel="PinboardTableViewCell" customClass="PinboardTableViewCell" customModule="YSLoaderSample" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="28" width="335" height="244"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cs0-cn-Eye" id="I2o-XJ-gKH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="126"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="335" height="244"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nvY-0A-DMa">
-                                                                    <rect key="frame" x="5" y="5" width="325" height="116"/>
+                                                                    <rect key="frame" x="5" y="5" width="325" height="234"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tck-dt-Wvm">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="110"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="234"/>
                                                                         </imageView>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6M-8W-i3R" userLabel="Seperator View">
-                                                                            <rect key="frame" x="0.0" y="115" width="325" height="1"/>
-                                                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="1" id="Zty-Ba-JNr"/>
-                                                                            </constraints>
-                                                                            <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                </userDefinedRuntimeAttribute>
-                                                                            </userDefinedRuntimeAttributes>
-                                                                        </view>
                                                                     </subviews>
                                                                 </stackView>
                                                             </subviews>
@@ -100,38 +80,19 @@
                                             <constraint firstItem="f2P-dH-lfZ" firstAttribute="leading" secondItem="enT-DJ-5RA" secondAttribute="leading" constant="20" id="wD3-3X-qfI"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YUc-hU-a6G">
-                                        <rect key="frame" x="63" y="215" width="249" height="75.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="VodafoneRg-Regular" family="Vodafone Rg" pointSize="16.600000381469727"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Settings" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hsY-x7-z9K">
-                                        <rect key="frame" x="63" y="280.5" width="249" height="36"/>
-                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="VodafoneRg-Regular" family="Vodafone Rg" pointSize="16.600000381469727"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="hsY-x7-z9K" firstAttribute="leading" secondItem="D0Q-cu-Aud" secondAttribute="leading" constant="63" id="0Ad-Xx-6JF"/>
                                     <constraint firstAttribute="trailing" secondItem="enT-DJ-5RA" secondAttribute="trailing" id="3WP-4a-Whd"/>
-                                    <constraint firstItem="hsY-x7-z9K" firstAttribute="top" secondItem="YUc-hU-a6G" secondAttribute="bottom" constant="-10" id="Djp-d2-ef8"/>
-                                    <constraint firstAttribute="trailing" secondItem="hsY-x7-z9K" secondAttribute="trailing" constant="63" id="LjD-mP-F1M"/>
-                                    <constraint firstAttribute="bottom" secondItem="hsY-x7-z9K" secondAttribute="bottom" id="X1g-Vq-Thl"/>
+                                    <constraint firstAttribute="bottom" secondItem="enT-DJ-5RA" secondAttribute="bottom" id="8AW-1j-2ry"/>
+                                    <constraint firstItem="f2P-dH-lfZ" firstAttribute="height" secondItem="D0Q-cu-Aud" secondAttribute="height" id="VTP-H3-d6F"/>
                                     <constraint firstItem="enT-DJ-5RA" firstAttribute="leading" secondItem="D0Q-cu-Aud" secondAttribute="leading" id="Yvd-Gq-Eo8"/>
-                                    <constraint firstItem="YUc-hU-a6G" firstAttribute="leading" secondItem="D0Q-cu-Aud" secondAttribute="leading" constant="63" id="bLF-Se-3pM"/>
-                                    <constraint firstAttribute="trailing" secondItem="YUc-hU-a6G" secondAttribute="trailing" constant="63" id="dvb-8q-lAc"/>
-                                    <constraint firstItem="hsY-x7-z9K" firstAttribute="centerX" secondItem="YUc-hU-a6G" secondAttribute="centerX" id="hVG-he-lTq"/>
-                                    <constraint firstItem="YUc-hU-a6G" firstAttribute="top" secondItem="enT-DJ-5RA" secondAttribute="bottom" constant="35" id="tVX-HS-NgP"/>
                                     <constraint firstItem="enT-DJ-5RA" firstAttribute="top" secondItem="D0Q-cu-Aud" secondAttribute="top" id="z19-i6-vFg"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="D0Q-cu-Aud" secondAttribute="bottom" constant="15" id="lBe-BT-8tP"/>
+                            <constraint firstAttribute="bottom" secondItem="D0Q-cu-Aud" secondAttribute="bottom" id="lBe-BT-8tP"/>
                             <constraint firstItem="D0Q-cu-Aud" firstAttribute="top" secondItem="XDv-76-jok" secondAttribute="bottom" constant="27" id="lYP-YI-Qg7"/>
                             <constraint firstItem="D0Q-cu-Aud" firstAttribute="leading" secondItem="zCi-KP-Mzx" secondAttribute="leading" id="osJ-U1-kWc"/>
                             <constraint firstAttribute="trailing" secondItem="D0Q-cu-Aud" secondAttribute="trailing" id="wiK-Tz-0gd"/>
