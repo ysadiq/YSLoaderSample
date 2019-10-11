@@ -12,7 +12,7 @@ class Category: Codable {
     let id: Int?
     let title: String?
     let photoCount: Int?
-    let links: ImageUrl?
+    let links: Link?
 
     enum CodingKeys: String, CodingKey {
         case id

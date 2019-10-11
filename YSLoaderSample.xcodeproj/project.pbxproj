@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		31E14EA4476AFE3C3605C447 /* libPods-YSLoaderSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */; };
+		9985C5A42350A80E0089293E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A32350A80E0089293E /* Link.swift */; };
+		9985C5A62350A83B0089293E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A52350A83B0089293E /* Category.swift */; };
+		9985C5A82350A86D0089293E /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A72350A86D0089293E /* ImageURL.swift */; };
+		9985C5AA2350A8AC0089293E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A92350A8AC0089293E /* User.swift */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
-		9997A3A4234D71C600787435 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* ViewController.swift */; };
+		9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* PinboardViewController.swift */; };
 		9997A3A7234D71C600787435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A5234D71C600787435 /* Main.storyboard */; };
 		9997A3A9234D71C800787435 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A8234D71C800787435 /* Assets.xcassets */; };
 		9997A3AC234D71C800787435 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3AA234D71C800787435 /* LaunchScreen.storyboard */; };
 		9997A3B7234D71C800787435 /* YSLoaderSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3B6234D71C800787435 /* YSLoaderSampleTests.swift */; };
+		9997A3C4234DAA0400787435 /* PinboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3C3234DAA0400787435 /* PinboardViewModel.swift */; };
+		9997A3C6234DDD5C00787435 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3C5234DDD5C00787435 /* Pin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,9 +35,13 @@
 /* Begin PBXFileReference section */
 		1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSLoaderSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSample.debug.xcconfig"; path = "Target Support Files/Pods-YSLoaderSample/Pods-YSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
+		9985C5A32350A80E0089293E /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		9985C5A52350A83B0089293E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9985C5A72350A86D0089293E /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
+		9985C5A92350A8AC0089293E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9997A3A3234D71C600787435 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9997A3A3234D71C600787435 /* PinboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewController.swift; sourceTree = "<group>"; };
 		9997A3A6234D71C600787435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9997A3A8234D71C800787435 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9997A3AB234D71C800787435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +49,8 @@
 		9997A3B2234D71C800787435 /* YSLoaderSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSLoaderSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3B6234D71C800787435 /* YSLoaderSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSLoaderSampleTests.swift; sourceTree = "<group>"; };
 		9997A3B8234D71C800787435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9997A3C3234DAA0400787435 /* PinboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewModel.swift; sourceTree = "<group>"; };
+		9997A3C5234DDD5C00787435 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		C0D7835CE5B4F2A7D1AE7DE5 /* Pods-YSLoaderSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSample.release.xcconfig"; path = "Target Support Files/Pods-YSLoaderSample/Pods-YSLoaderSample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,8 +79,38 @@
 				5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */,
 				C0D7835CE5B4F2A7D1AE7DE5 /* Pods-YSLoaderSample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9985C5A22350A7BC0089293E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9997A3C5234DDD5C00787435 /* Pin.swift */,
+				9985C5A32350A80E0089293E /* Link.swift */,
+				9985C5A52350A83B0089293E /* Category.swift */,
+				9985C5A92350A8AC0089293E /* User.swift */,
+				9985C5A72350A86D0089293E /* ImageURL.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9985C5AB2350AA480089293E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9997A3C3234DAA0400787435 /* PinboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9985C5AC2350AA6B0089293E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9997A3A5234D71C600787435 /* Main.storyboard */,
+				9997A3A8234D71C800787435 /* Assets.xcassets */,
+				9997A3AA234D71C800787435 /* LaunchScreen.storyboard */,
+				9997A3AD234D71C800787435 /* Info.plist */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		9997A395234D71C600787435 = {
@@ -95,11 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
-				9997A3A3234D71C600787435 /* ViewController.swift */,
-				9997A3A5234D71C600787435 /* Main.storyboard */,
-				9997A3A8234D71C800787435 /* Assets.xcassets */,
-				9997A3AA234D71C800787435 /* LaunchScreen.storyboard */,
-				9997A3AD234D71C800787435 /* Info.plist */,
+				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
+				9985C5AB2350AA480089293E /* ViewModel */,
+				9985C5A22350A7BC0089293E /* Model */,
+				9985C5AC2350AA6B0089293E /* Resource */,
 			);
 			path = YSLoaderSample;
 			sourceTree = "<group>";
@@ -248,8 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9997A3A4234D71C600787435 /* ViewController.swift in Sources */,
+				9985C5A82350A86D0089293E /* ImageURL.swift in Sources */,
+				9985C5A42350A80E0089293E /* Link.swift in Sources */,
+				9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */,
+				9997A3C4234DAA0400787435 /* PinboardViewModel.swift in Sources */,
+				9985C5AA2350A8AC0089293E /* User.swift in Sources */,
+				9997A3C6234DDD5C00787435 /* Pin.swift in Sources */,
 				9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */,
+				9985C5A62350A83B0089293E /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +461,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = YSLoaderSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,7 +480,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = YSLoaderSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
