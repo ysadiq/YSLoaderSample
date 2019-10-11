@@ -84,7 +84,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9985C5A22350A7BC0089293E /* Model */ = {
+		9985C5A22350A7BC0089293E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				9997A3C5234DDD5C00787435 /* Pin.swift */,
@@ -93,18 +93,18 @@
 				9985C5A92350A8AC0089293E /* User.swift */,
 				9985C5A72350A86D0089293E /* ImageURL.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		9985C5AB2350AA480089293E /* ViewModel */ = {
+		9985C5AB2350AA480089293E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				9997A3C3234DAA0400787435 /* PinboardViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		9985C5AC2350AA6B0089293E /* Resource */ = {
+		9985C5AC2350AA6B0089293E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				9985C5B12350B05E0089293E /* Constants.swift */,
@@ -113,7 +113,7 @@
 				9997A3AA234D71C800787435 /* LaunchScreen.storyboard */,
 				9997A3AD234D71C800787435 /* Info.plist */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9997A395234D71C600787435 = {
@@ -141,9 +141,9 @@
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
-				9985C5AB2350AA480089293E /* ViewModel */,
-				9985C5A22350A7BC0089293E /* Model */,
-				9985C5AC2350AA6B0089293E /* Resource */,
+				9985C5AB2350AA480089293E /* ViewModels */,
+				9985C5A22350A7BC0089293E /* Models */,
+				9985C5AC2350AA6B0089293E /* Resources */,
 			);
 			path = YSLoaderSample;
 			sourceTree = "<group>";
