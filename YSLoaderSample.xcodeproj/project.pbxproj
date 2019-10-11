@@ -14,6 +14,7 @@
 		9985C5AA2350A8AC0089293E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A92350A8AC0089293E /* User.swift */; };
 		9985C5B22350B05E0089293E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B12350B05E0089293E /* Constants.swift */; };
 		9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B52350C7070089293E /* PinboardTableViewCell.swift */; };
+		9985C5B82350E0F60089293E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B72350E0F60089293E /* GCD.swift */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
 		9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* PinboardViewController.swift */; };
 		9997A3A7234D71C600787435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A5234D71C600787435 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		9985C5A92350A8AC0089293E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9985C5B12350B05E0089293E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9985C5B52350C7070089293E /* PinboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardTableViewCell.swift; sourceTree = "<group>"; };
+		9985C5B72350E0F60089293E /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9997A3A3234D71C600787435 /* PinboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
+				9985C5B72350E0F60089293E /* GCD.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
 				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
 				9985C5B12350B05E0089293E /* Constants.swift */,
@@ -302,6 +305,7 @@
 				9985C5AA2350A8AC0089293E /* User.swift in Sources */,
 				9997A3C6234DDD5C00787435 /* Pin.swift in Sources */,
 				9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */,
+				9985C5B82350E0F60089293E /* GCD.swift in Sources */,
 				9985C5A62350A83B0089293E /* Category.swift in Sources */,
 				9985C5B22350B05E0089293E /* Constants.swift in Sources */,
 				9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */,

@@ -10,6 +10,8 @@ import YSLoader
 
 class PinboardViewModel: NSObject {
     var loader: YSLoader
+    var loadingText: String = "fetching details"
+
     private var cellViewModels: [PinboardCellViewModel] = [PinboardCellViewModel]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -37,6 +39,7 @@ class PinboardViewModel: NSObject {
                 let data = data else {
                     return
             }
+            self.isLoading = false
             do {
                 let pins: [Pin] = try JSONDecoder().decode([Pin].self, from: data)
                 self.processFetchedPins(pins, with: imageSize)

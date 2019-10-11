@@ -7,5 +7,6 @@ target 'YSLoaderSample' do
 
   # Pods for YSLoaderSample
     pod 'YSLoader', :path => '../libraries/YSLoader'
+    pod 'MBProgressHUD', '~> 1.1.0', :modular_headers => true
 
 end
