@@ -32,7 +32,7 @@ class PinboardViewModel: NSObject {
 
     func fetchPins() {
         isLoading = true
-        loader.json(with: "http://pastebin.com/raw/wgkJgazE") { [weak self] data in
+        loader.json(with: APIEndpoint.Content.pastebin) { [weak self] data in
             guard let self = self else {
                 return
             }

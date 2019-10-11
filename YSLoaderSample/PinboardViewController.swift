@@ -50,7 +50,7 @@ extension PinboardViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PinboardTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell, for: indexPath)
         guard let cellItem = cell as? PinboardTableViewCell,
             let permission = viewModel.getCellViewModel(at: indexPath) else {
                 return cell
