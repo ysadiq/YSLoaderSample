@@ -33,8 +33,9 @@ class PinboardViewModel: NSObject {
     }
 
     func fetchPins(with imageSize: ImageSize) {
+        loadingText = "Fetching Data"
         isLoading = true
-        loader.json(with: APIEndpoint.Content.pastebin) { [weak self] data in
+        loader.json(with: APIEndpoint.Content.pins) { [weak self] data in
             guard let self = self,
                 let data = data else {
                     return
@@ -52,12 +53,14 @@ class PinboardViewModel: NSObject {
     private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
 //        var vms = [PinboardCellViewModel]()
 
+        loadingText = "Fetching Images"
+        isLoading = true
         for pin in pins {
             guard let imageURL = pin.imageUrl?.imageURLString(of: size) else {
                 continue
             }
-
             loader.image(with: imageURL) { (image) in
+                self.isLoading = false
                 guard let image = image else {
                     return
                 }

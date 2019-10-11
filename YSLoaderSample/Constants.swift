@@ -12,7 +12,8 @@ import Foundation
 struct APIEndpoint {
     // MARK: - Content
     struct Content {
-        static let pastebin: String = "http://pastebin.com/raw/wgkJgazE"
+        static let pins: String = "http://pastebin.com/raw/wgkJgazE"
+        static let pinsWithError: String = "https://pastebin.com/raw/gJv1z6Cb"
     }
 }
 
