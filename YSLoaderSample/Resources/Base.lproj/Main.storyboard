@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PnG-yB-UqY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Pinboard View Controller-->
         <scene sceneID="mAM-fE-tvZ">
             <objects>
-                <viewController storyboardIdentifier="VFGDevicePermissionsViewController" id="PnG-yB-UqY" customClass="ViewController" customModule="YSLoaderSample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VFGDevicePermissionsViewController" id="PnG-yB-UqY" customClass="PinboardViewController" customModule="YSLoaderSample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XDv-76-jok"/>
                         <viewControllerLayoutGuide type="bottom" id="xpe-tS-9jx"/>
@@ -39,7 +39,7 @@
                                                     <constraint firstAttribute="height" constant="153" id="JZG-KG-61U"/>
                                                 </constraints>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DevicePermissionsTableViewCell" rowHeight="126" id="Cs0-cn-Eye" customClass="VFGDevicePermissionsTableViewCell" customModule="YSLoaderSample" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PinboardTableViewCell" rowHeight="126" id="Cs0-cn-Eye" userLabel="PinboardTableViewCell" customClass="PinboardTableViewCell" customModule="YSLoaderSample" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="335" height="126"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cs0-cn-Eye" id="I2o-XJ-gKH">
@@ -81,8 +81,15 @@
                                                                 <real key="value" value="6"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="pinImageView" destination="Tck-dt-Wvm" id="8Px-wM-ES7"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="PnG-yB-UqY" id="bPj-GI-Vxb"/>
+                                                    <outlet property="delegate" destination="PnG-yB-UqY" id="dmB-kS-51W"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,7 +139,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="Tck-dt-Wvm" id="KUn-Io-t1d"/>
+                        <outlet property="tableView" destination="f2P-dH-lfZ" id="WFI-t4-FhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EHM-Ed-7bh" userLabel="First Responder" sceneMemberID="firstResponder"/>

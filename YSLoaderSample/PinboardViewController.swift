@@ -36,7 +36,7 @@ class PinboardViewController: UIViewController {
             }
         }
 
-        viewModel.fetchPins(with: .large)
+        viewModel.fetchPins(with: .regular)
     }
 }
 
@@ -57,8 +57,6 @@ extension PinboardViewController: UITableViewDataSource {
         }
 
         cellItem.configure(with: permission)
-        // Set delegate for hyperlink in textView
-        cellItem.requestTextView.delegate = self
         return cellItem
     }
 

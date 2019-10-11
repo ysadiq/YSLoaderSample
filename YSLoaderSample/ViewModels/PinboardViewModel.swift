@@ -33,26 +33,21 @@ class PinboardViewModel: NSObject {
     func fetchPins(with imageSize: ImageSize) {
         isLoading = true
         loader.json(with: APIEndpoint.Content.pastebin) { [weak self] data in
-            guard let self = self else {
-                return
+            guard let self = self,
+                let data = data else {
+                    return
             }
-            self.isLoading = false
-            guard let data = data else {
-                return
-            }
-
             do {
                 let pins: [Pin] = try JSONDecoder().decode([Pin].self, from: data)
                 self.processFetchedPins(pins, with: imageSize)
             } catch {
 
             }
-
         }
     }
 
     private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
-        var vms = [PinboardCellViewModel]()
+//        var vms = [PinboardCellViewModel]()
 
         for pin in pins {
             guard let imageURL = imageURLString(of: pin, with: size) else {
@@ -63,10 +58,10 @@ class PinboardViewModel: NSObject {
                 guard let image = image else {
                     return
                 }
-                vms.append(PinboardCellViewModel(image: image))
+//                vms.append(PinboardCellViewModel(image: image))
+                self.cellViewModels.append(PinboardCellViewModel(image: image))
             }
         }
-        self.cellViewModels = vms
     }
 
 //    func createCellViewModel(_ pinboard: PinboardModel) -> PinboardCellViewModel? {

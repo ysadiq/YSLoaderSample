@@ -14,6 +14,7 @@
 		9985C5AA2350A8AC0089293E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A92350A8AC0089293E /* User.swift */; };
 		9985C5B22350B05E0089293E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B12350B05E0089293E /* Constants.swift */; };
 		9985C5B42350BAC50089293E /* Enum+ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B32350BAC50089293E /* Enum+ImageSize.swift */; };
+		9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B52350C7070089293E /* PinboardTableViewCell.swift */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
 		9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* PinboardViewController.swift */; };
 		9997A3A7234D71C600787435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A5234D71C600787435 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		9985C5A92350A8AC0089293E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9985C5B12350B05E0089293E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9985C5B32350BAC50089293E /* Enum+ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+ImageSize.swift"; sourceTree = "<group>"; };
+		9985C5B52350C7070089293E /* PinboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardTableViewCell.swift; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9997A3A3234D71C600787435 /* PinboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +112,6 @@
 		9985C5AC2350AA6B0089293E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9985C5B12350B05E0089293E /* Constants.swift */,
 				9997A3A5234D71C600787435 /* Main.storyboard */,
 				9997A3A8234D71C800787435 /* Assets.xcassets */,
 				9997A3AA234D71C800787435 /* LaunchScreen.storyboard */,
@@ -144,6 +145,8 @@
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
+				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
+				9985C5B12350B05E0089293E /* Constants.swift */,
 				9985C5AB2350AA480089293E /* ViewModels */,
 				9985C5A22350A7BC0089293E /* Models */,
 				9985C5AC2350AA6B0089293E /* Resources */,
@@ -305,6 +308,7 @@
 				9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */,
 				9985C5A62350A83B0089293E /* Category.swift in Sources */,
 				9985C5B22350B05E0089293E /* Constants.swift in Sources */,
+				9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +473,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resource/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,7 +492,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93L23JH8CL;
-				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resource/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/YSLoaderSample/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
