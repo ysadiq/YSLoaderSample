@@ -13,7 +13,6 @@
 		9985C5A82350A86D0089293E /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A72350A86D0089293E /* ImageURL.swift */; };
 		9985C5AA2350A8AC0089293E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A92350A8AC0089293E /* User.swift */; };
 		9985C5B22350B05E0089293E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B12350B05E0089293E /* Constants.swift */; };
-		9985C5B42350BAC50089293E /* Enum+ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B32350BAC50089293E /* Enum+ImageSize.swift */; };
 		9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B52350C7070089293E /* PinboardTableViewCell.swift */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
 		9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* PinboardViewController.swift */; };
@@ -43,7 +42,6 @@
 		9985C5A72350A86D0089293E /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		9985C5A92350A8AC0089293E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9985C5B12350B05E0089293E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9985C5B32350BAC50089293E /* Enum+ImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+ImageSize.swift"; sourceTree = "<group>"; };
 		9985C5B52350C7070089293E /* PinboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardTableViewCell.swift; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				9997A3C3234DAA0400787435 /* PinboardViewModel.swift */,
-				9985C5B32350BAC50089293E /* Enum+ImageSize.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -303,7 +300,6 @@
 				9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */,
 				9997A3C4234DAA0400787435 /* PinboardViewModel.swift in Sources */,
 				9985C5AA2350A8AC0089293E /* User.swift in Sources */,
-				9985C5B42350BAC50089293E /* Enum+ImageSize.swift in Sources */,
 				9997A3C6234DDD5C00787435 /* Pin.swift in Sources */,
 				9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */,
 				9985C5A62350A83B0089293E /* Category.swift in Sources */,

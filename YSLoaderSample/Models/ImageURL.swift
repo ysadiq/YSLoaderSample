@@ -36,3 +36,13 @@ class ImageURL: Codable {
         }
     }
 }
+
+enum ImageSize {
+    case raw
+    case full
+    case regular
+    case large
+    case medium
+    case small
+    case thump
+}
