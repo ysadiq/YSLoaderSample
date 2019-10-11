@@ -36,7 +36,7 @@ class PinboardViewController: UIViewController {
             }
         }
 
-        viewModel.fetchPins()
+        viewModel.fetchPins(with: .large)
     }
 }
 
