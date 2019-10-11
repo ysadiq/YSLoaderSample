@@ -51,27 +51,6 @@ class PinboardViewModel: NSObject {
         }
     }
 
-    private func imageURLString(of pin: Pin, with size: ImageSize) -> String? {
-        var imageURL: String?
-        switch size {
-        case .raw:
-            imageURL = pin.imageUrl?.raw
-        case .full:
-            imageURL = pin.imageUrl?.full
-        case .regular:
-            imageURL = pin.imageUrl?.regular
-        case .small:
-            imageURL = pin.imageUrl?.small
-        case .thump:
-            imageURL = pin.imageUrl?.thumb
-        case .large:
-            imageURL = pin.imageUrl?.large
-        case .medium:
-            imageURL = pin.imageUrl?.medium
-        }
-
-        return imageURL
-    }
     private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
         var vms = [PinboardCellViewModel]()
 
@@ -127,4 +106,29 @@ class PinboardViewModel: NSObject {
 
 struct PinboardCellViewModel {
     let image: UIImage
+}
+
+// MARK: - PinboardCellViewModel (Helpers)
+extension PinboardViewModel {
+    private func imageURLString(of pin: Pin, with size: ImageSize) -> String? {
+        var imageURL: String?
+        switch size {
+        case .raw:
+            imageURL = pin.imageUrl?.raw
+        case .full:
+            imageURL = pin.imageUrl?.full
+        case .regular:
+            imageURL = pin.imageUrl?.regular
+        case .small:
+            imageURL = pin.imageUrl?.small
+        case .thump:
+            imageURL = pin.imageUrl?.thumb
+        case .large:
+            imageURL = pin.imageUrl?.large
+        case .medium:
+            imageURL = pin.imageUrl?.medium
+        }
+
+        return imageURL
+    }
 }
