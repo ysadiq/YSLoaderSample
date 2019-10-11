@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ImageUrl: Codable {
+class ImageURL: Codable {
     let raw: String?
     let full: String?
     let regular: String?
@@ -16,4 +16,23 @@ class ImageUrl: Codable {
     let thumb: String?
     let medium: String?
     let large: String?
+
+    func imageURLString(of size: ImageSize) -> String? {
+        switch size {
+        case .raw:
+            return raw
+        case .full:
+            return full
+        case .regular:
+            return regular
+        case .small:
+            return small
+        case .thump:
+            return thumb
+        case .large:
+            return large
+        case .medium:
+            return medium
+        }
+    }
 }

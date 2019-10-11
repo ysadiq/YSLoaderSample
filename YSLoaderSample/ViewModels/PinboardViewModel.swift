@@ -50,7 +50,7 @@ class PinboardViewModel: NSObject {
 //        var vms = [PinboardCellViewModel]()
 
         for pin in pins {
-            guard let imageURL = imageURLString(of: pin, with: size) else {
+            guard let imageURL = pin.imageUrl?.imageURLString(of: size) else {
                 continue
             }
 
@@ -63,33 +63,6 @@ class PinboardViewModel: NSObject {
             }
         }
     }
-
-//    func createCellViewModel(_ pinboard: PinboardModel) -> PinboardCellViewModel? {
-//        guard let imageURL = pinboard.imageURL else {
-//            return nil
-//        }
-//        loader.image(with: imageURL) { (image) in
-//            <#code#>
-//        }
-//        return PinboardCellViewModel(image: pinboard.imageURL)
-//    }
-
-    /// Fetches all required permissions
-    /// on completion, sets fetched permissions to permissions list
-//    func fetchImages() {
-//        self.isLoading = true
-//        loader.json(with: "http://pastebin.com/raw/wgkJgazE") { (json) in
-//            guard let json = json as? [String: Any],
-//                let model: T = JSONDecoder.parseJson(json) else {
-//                    completion(nil, MVAError.parse)
-//                    return
-//            }
-//            guard let image = image else {
-//                return
-//            }
-//            images.append(image)
-//        }
-//    }
 
     func getCellViewModel(at indexPath: IndexPath) -> PinboardCellViewModel? {
         guard indexPath.row < cellViewModels.count else {
@@ -105,25 +78,4 @@ struct PinboardCellViewModel {
 
 // MARK: - PinboardCellViewModel (Helpers)
 extension PinboardViewModel {
-    private func imageURLString(of pin: Pin, with size: ImageSize) -> String? {
-        var imageURL: String?
-        switch size {
-        case .raw:
-            imageURL = pin.imageUrl?.raw
-        case .full:
-            imageURL = pin.imageUrl?.full
-        case .regular:
-            imageURL = pin.imageUrl?.regular
-        case .small:
-            imageURL = pin.imageUrl?.small
-        case .thump:
-            imageURL = pin.imageUrl?.thumb
-        case .large:
-            imageURL = pin.imageUrl?.large
-        case .medium:
-            imageURL = pin.imageUrl?.medium
-        }
-
-        return imageURL
-    }
 }

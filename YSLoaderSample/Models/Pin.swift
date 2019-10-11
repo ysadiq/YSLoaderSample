@@ -20,7 +20,7 @@ class Pin: Decodable {
     var isLikedByUser: Bool?
 
     var user: User?
-    var imageUrl: ImageUrl?
+    var imageUrl: ImageURL?
     var categories: [Category]?
     var links: Link?
 
@@ -64,7 +64,7 @@ class Pin: Decodable {
         likes = try values.decodeIfPresent(Int.self, forKey: .height)
         isLikedByUser = try values.decodeIfPresent(Bool.self, forKey: .isLikedByUser)
         user = try values.decodeIfPresent(User.self, forKey: .user)
-        imageUrl = try values.decodeIfPresent(ImageUrl.self, forKey: .imageUrls)
+        imageUrl = try values.decodeIfPresent(ImageURL.self, forKey: .imageUrls)
         categories = try values.decodeIfPresent([Category].self, forKey: .categories)
         links = try values.decodeIfPresent(Link.self, forKey: .links)
     }

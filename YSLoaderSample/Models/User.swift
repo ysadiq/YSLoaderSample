@@ -12,7 +12,7 @@ class User: Codable {
     let id: String?
     let userName: String?
     let name: String?
-    let profileImage: ImageUrl?
+    let profileImage: ImageURL?
     let links : Link?
 
     enum CodingKeys: String, CodingKey {

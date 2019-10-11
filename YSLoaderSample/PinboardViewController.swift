@@ -35,7 +35,6 @@ class PinboardViewController: UIViewController {
 //                self.tableViewHeightConstraint.constant = self.tableView.contentSize.height
             }
         }
-
         viewModel.fetchPins(with: .regular)
     }
 }
@@ -58,9 +57,5 @@ extension PinboardViewController: UITableViewDataSource {
 
         cellItem.configure(with: permission)
         return cellItem
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        scrollView.bounces = true
     }
 }
