@@ -8,15 +8,19 @@
 
 import XCTest
 @testable import YSLoaderSample
-@testable import YSLoader
+
 class PinboardViewModelTests: XCTestCase {
     var sut: PinboardViewModel!
+    var mockYSLoader: MockYSLoader!
 
     override func setUp() {
-        sut = PinboardViewModel()
+        mockYSLoader = MockYSLoader()
+        sut = PinboardViewModel(mockYSLoader)
     }
 
     override func tearDown() {
+        sut = nil
+        mockYSLoader = nil
     }
 
 }

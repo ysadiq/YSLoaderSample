@@ -9,7 +9,7 @@ import Foundation
 import YSLoader
 
 class PinboardViewModel: NSObject {
-    var loader: YSLoader
+    var loader: YSLoaderProtocol
     var loadingText: String = "fetching details"
 
     private var cellViewModels: [PinboardCellViewModel] = [PinboardCellViewModel]() {
@@ -28,7 +28,7 @@ class PinboardViewModel: NSObject {
     var reloadTableViewClosure: (() -> Void)?
     var updateLoadingStatus: (()->())?
 
-    init(_ loader: YSLoader = YSLoader()) {
+    init(_ loader: YSLoaderProtocol = YSLoader.shared) {
         self.loader = loader
     }
 
