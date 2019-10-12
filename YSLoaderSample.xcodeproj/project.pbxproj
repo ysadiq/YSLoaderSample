@@ -15,6 +15,7 @@
 		9985C5B22350B05E0089293E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B12350B05E0089293E /* Constants.swift */; };
 		9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B52350C7070089293E /* PinboardTableViewCell.swift */; };
 		9985C5B82350E0F60089293E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B72350E0F60089293E /* GCD.swift */; };
+		9985C5BA235192940089293E /* UIViewController+MBProgressHud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5B9235192940089293E /* UIViewController+MBProgressHud.swift */; };
 		9997A3A2234D71C600787435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A1234D71C600787435 /* AppDelegate.swift */; };
 		9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997A3A3234D71C600787435 /* PinboardViewController.swift */; };
 		9997A3A7234D71C600787435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9997A3A5234D71C600787435 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		9985C5B12350B05E0089293E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9985C5B52350C7070089293E /* PinboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardTableViewCell.swift; sourceTree = "<group>"; };
 		9985C5B72350E0F60089293E /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		9985C5B9235192940089293E /* UIViewController+MBProgressHud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MBProgressHud.swift"; sourceTree = "<group>"; };
 		9997A39E234D71C600787435 /* YSLoaderSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSLoaderSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9997A3A1234D71C600787435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9997A3A3234D71C600787435 /* PinboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
 				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
 				9985C5B12350B05E0089293E /* Constants.swift */,
+				9985C5B9235192940089293E /* UIViewController+MBProgressHud.swift */,
 				9985C5AB2350AA480089293E /* ViewModels */,
 				9985C5A22350A7BC0089293E /* Models */,
 				9985C5AC2350AA6B0089293E /* Resources */,
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9985C5BA235192940089293E /* UIViewController+MBProgressHud.swift in Sources */,
 				9985C5A82350A86D0089293E /* ImageURL.swift in Sources */,
 				9985C5A42350A80E0089293E /* Link.swift in Sources */,
 				9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */,

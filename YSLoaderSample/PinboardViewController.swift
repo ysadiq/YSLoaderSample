@@ -26,12 +26,15 @@ class PinboardViewController: UIViewController {
     func initViewModel() {
 
         viewModel.updateLoadingStatus = { [weak self] () in
+            guard let self = self else {
+                return
+            }
             performUIUpdatesOnMain {
-                let isLoading = self?.viewModel.isLoading ?? false
+                let isLoading = self.viewModel.isLoading
                 if isLoading {
-                    self?.showSpinner()
+                    self.showSpinner(with: "Loading", and: self.viewModel.loadingText)
                 } else {
-                    self?.hideSpinner()
+                    self.hideSpinner()
                 }
             }
         }
@@ -48,18 +51,6 @@ class PinboardViewController: UIViewController {
             }
         }
         viewModel.fetchPins(with: .regular)
-    }
-
-    private func showSpinner() {
-        let Indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
-        Indicator.label.text = "Loading"
-        Indicator.isUserInteractionEnabled = false
-        Indicator.detailsLabel.text = viewModel.loadingText
-        Indicator.show(animated: true)
-    }
-
-    private func hideSpinner() {
-        MBProgressHUD.hide(for: self.view, animated: true)
     }
 }
 
