@@ -10,7 +10,6 @@ import UIKit
 
 class PinboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-
     lazy var viewModel: PinboardViewModel = {
         return PinboardViewModel()
     }()

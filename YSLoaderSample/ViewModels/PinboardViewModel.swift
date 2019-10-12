@@ -50,6 +50,10 @@ class PinboardViewModel: NSObject {
         }
     }
 
+    func cancelFetch() {
+        loader.cancelRequest()
+    }
+
     private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
 //        var vms = [PinboardCellViewModel]()
 
