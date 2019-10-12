@@ -121,6 +121,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		9985C5BB235194C90089293E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9985C5B12350B05E0089293E /* Constants.swift */,
+				9985C5B72350E0F60089293E /* GCD.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9985C5BC235194D30089293E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9985C5B9235192940089293E /* UIViewController+MBProgressHud.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9997A395234D71C600787435 = {
 			isa = PBXGroup;
 			children = (
@@ -145,13 +162,12 @@
 			isa = PBXGroup;
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
-				9985C5B72350E0F60089293E /* GCD.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
 				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
-				9985C5B12350B05E0089293E /* Constants.swift */,
-				9985C5B9235192940089293E /* UIViewController+MBProgressHud.swift */,
 				9985C5AB2350AA480089293E /* ViewModels */,
 				9985C5A22350A7BC0089293E /* Models */,
+				9985C5BB235194C90089293E /* Helpers */,
+				9985C5BC235194D30089293E /* Extensions */,
 				9985C5AC2350AA6B0089293E /* Resources */,
 			);
 			path = YSLoaderSample;

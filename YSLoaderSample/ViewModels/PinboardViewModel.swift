@@ -35,7 +35,7 @@ class PinboardViewModel: NSObject {
     func fetchPins(with imageSize: ImageSize) {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.json(with: APIEndpoint.Content.pins) { [weak self] data in
+        loader.json(with: APIEndpoint.Content.pinLongList) { [weak self] data in
             guard let self = self,
                 let data = data else {
                     return

@@ -14,6 +14,7 @@ struct APIEndpoint {
     struct Content {
         static let pins: String = "http://pastebin.com/raw/wgkJgazE"
         static let pinsWithError: String = "https://pastebin.com/raw/gJv1z6Cb"
+        static let pinLongList: String = "https://pastebin.com/raw/tVMXTjpB"
     }
 }
 

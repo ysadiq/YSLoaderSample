@@ -13,14 +13,15 @@ extension UIViewController {
     func showSpinner(with title: String, and details: String) {
         performUIUpdatesOnMain {
             let Indicator = MBProgressHUD.showAdded(to: self.view, animated: true)
-            Indicator.label.text = title
-            Indicator.isUserInteractionEnabled = false
-            Indicator.detailsLabel.text = details
-            Indicator.show(animated: true)
+            Indicator.mode = MBProgressHUDMode.annularDeterminate
+            Indicator.label.text = details
+            Indicator.detailsLabel.text = "Tap to cancel"
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.hideSpinner))
+            Indicator.addGestureRecognizer(tap)
         }
     }
 
-    func hideSpinner() {
+    @objc func hideSpinner() {
         performUIUpdatesOnMain {
             MBProgressHUD.hide(for: self.view, animated: true)
         }
