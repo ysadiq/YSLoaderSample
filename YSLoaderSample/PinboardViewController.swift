@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class PinboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -29,13 +28,10 @@ class PinboardViewController: UIViewController {
             guard let self = self else {
                 return
             }
-            performUIUpdatesOnMain {
-                let isLoading = self.viewModel.isLoading
-                if isLoading {
-                    self.showSpinner(with: "Loading", and: self.viewModel.loadingText)
-                } else {
-                    self.hideSpinner()
-                }
+            if self.viewModel.isLoading {
+                self.showSpinner(with: "Loading", and: self.viewModel.loadingText)
+            } else {
+                self.hideSpinner()
             }
         }
 
