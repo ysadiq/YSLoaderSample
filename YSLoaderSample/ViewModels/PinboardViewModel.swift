@@ -35,18 +35,17 @@ class PinboardViewModel: NSObject {
     func fetchPins(with imageSize: ImageSize) {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.json(with: APIEndpoint.Content.pinLongList) { [weak self] data in
-            guard let self = self,
-                let data = data else {
-                    return
-            }
-            self.isLoading = false
-            do {
-                let pins: [Pin] = try JSONDecoder().decode([Pin].self, from: data)
-                self.processFetchedPins(pins, with: imageSize)
-            } catch {
-
-            }
+        loader.load(with: APIEndpoint.Content.pins,
+                    dataType: .json) { (result: Result<Data, Error>) in
+                        switch result {
+                        case .success(let json):
+                            do {
+                                let pins: [Pin] = try JSONDecoder().decode([Pin].self, from: json)
+                                self.processFetchedPins(pins, with: imageSize)
+                            } catch {}
+                        case .failure(let error):
+                            print(error)
+                        }
         }
     }
 
@@ -55,21 +54,21 @@ class PinboardViewModel: NSObject {
     }
 
     private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
-//        var vms = [PinboardCellViewModel]()
-
         loadingText = "Fetching Images"
         isLoading = true
         for pin in pins {
             guard let imageURL = pin.imageUrl?.imageURLString(of: size) else {
                 continue
             }
-            loader.image(with: imageURL) { (image) in
-                self.isLoading = false
-                guard let image = image else {
-                    return
-                }
-//                vms.append(PinboardCellViewModel(image: image))
-                self.cellViewModels.append(PinboardCellViewModel(image: image))
+            loader.load(with: imageURL,
+                        dataType: .image) { (result: Result<UIImage, Error>) in
+                            self.isLoading = false
+                            switch result {
+                            case .success(let image):
+                                self.cellViewModels.append(PinboardCellViewModel(image: image))
+                            case .failure(let error):
+                                print(error)
+                            }
             }
         }
     }
