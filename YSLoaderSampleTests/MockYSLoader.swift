@@ -14,12 +14,19 @@ public class MockYSLoader: YSLoaderProtocol {
     var jsonIsCalled: Bool = false
     var cancelIsCalled: Bool = false
 
-    public func image(with url: String, completion: @escaping (UIImage?) -> Void) {
-        imageIsCalled = true
+    public func load<T>(with url: String, dataType: DataType, completionHandler: @escaping (Result<T, Error>) -> Void) {
+        load(with: url, parameters: nil, dataType: dataType, completionHandler: completionHandler)
     }
 
-    public func json(with url: String, completion: @escaping (Data?) -> Void) {
-        jsonIsCalled = true
+    public func load<T>(with url: String, parameters: [String : String]?, dataType: DataType, completionHandler: @escaping (Result<T, Error>) -> Void) {
+        switch dataType {
+        case .image:
+            imageIsCalled = true
+        case .json:
+            jsonIsCalled = true
+        default:
+            break
+        }
     }
 
     public func cancelRequest() {
