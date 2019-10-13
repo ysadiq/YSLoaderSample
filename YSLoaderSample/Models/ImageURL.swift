@@ -17,7 +17,7 @@ class ImageURL: Codable {
     let medium: String?
     let large: String?
 
-    func imageURLString(of size: ImageSize) -> String? {
+    func imageURLString(of size: PinSize) -> String? {
         switch size {
         case .raw:
             return raw
@@ -37,7 +37,7 @@ class ImageURL: Codable {
     }
 }
 
-enum ImageSize {
+enum PinSize {
     case raw
     case full
     case regular

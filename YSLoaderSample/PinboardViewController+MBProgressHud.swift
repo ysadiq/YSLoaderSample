@@ -34,7 +34,7 @@ extension PinboardViewController {
     }
 
     @objc func cancelSpinner() {
-        viewModel.cancelFetch()
+//        viewModel.cancelFetch()
         performUIUpdatesOnMain { [weak self] in
             guard let self = self else {
                 return

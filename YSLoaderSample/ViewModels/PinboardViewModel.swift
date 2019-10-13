@@ -11,6 +11,7 @@ import YSLoader
 class PinboardViewModel: NSObject {
     var loader: YSLoaderProtocol
     var loadingText: String = "fetching details"
+    var reloadForRow: Int? = nil
 
     private var cellViewModels: [PinboardCellViewModel] = [PinboardCellViewModel]() {
         didSet {
@@ -27,21 +28,23 @@ class PinboardViewModel: NSObject {
     }
     var reloadTableViewClosure: (() -> Void)?
     var updateLoadingStatus: (()->())?
+    let pinSize: PinSize
 
-    init(_ loader: YSLoaderProtocol = YSLoader.shared) {
+    init(_ loader: YSLoaderProtocol = YSLoader.shared, pinSize: PinSize = .thump) {
         self.loader = loader
+        self.pinSize = pinSize
     }
 
-    func fetchPins(with imageSize: ImageSize) {
+    func fetchPins() {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.load(with: APIEndpoint.Content.pins,
+        loader.load(with: APIEndpoint.Content.pinLongList,
                     dataType: .json) { (result: Result<Data, Error>) in
                         switch result {
                         case .success(let json):
                             do {
                                 let pins: [Pin] = try JSONDecoder().decode([Pin].self, from: json)
-                                self.processFetchedPins(pins, with: imageSize)
+                                self.processFetchedPins(pins)
                             } catch {}
                         case .failure(let error):
                             print(error)
@@ -49,40 +52,63 @@ class PinboardViewModel: NSObject {
         }
     }
 
-    func cancelFetch() {
-        loader.cancelRequest()
+    func cancelImageFetching(forPinAt index: Int) {
+        let url = cellViewModels[index].imageURL
+        loader.cancelRequest(with: url)
     }
 
-    private func processFetchedPins(_ pins: [Pin], with size: ImageSize) {
-        loadingText = "Fetching Images"
-        isLoading = true
+    private func processFetchedPins(_ pins: [Pin]) {
+        var vms = [PinboardCellViewModel]()
         for pin in pins {
-            guard let imageURL = pin.imageUrl?.imageURLString(of: size) else {
+            guard let cellViewModel = createCellViewModel(pin) else {
                 continue
             }
-            loader.load(with: imageURL,
-                        dataType: .image) { (result: Result<UIImage, Error>) in
-                            self.isLoading = false
-                            switch result {
-                            case .success(let image):
-                                self.cellViewModels.append(PinboardCellViewModel(image: image))
-                            case .failure(let error):
-                                print(error)
-                            }
-            }
+            vms.append(cellViewModel)
         }
+
+        cellViewModels = vms
     }
 
-    func getCellViewModel(at indexPath: IndexPath) -> PinboardCellViewModel? {
-        guard indexPath.row < cellViewModels.count else {
+    func createCellViewModel(_ pin: Pin) -> PinboardCellViewModel? {
+        guard let imageURL = pin.imageUrl?.imageURLString(of: pinSize) else {
             return nil
         }
-        return cellViewModels[indexPath.row]
+        return PinboardCellViewModel(imageURL: imageURL)
+    }
+
+    @discardableResult
+    func getCellViewModel(at row: Int) -> PinboardCellViewModel? {
+        guard row < cellViewModels.count else {
+            return nil
+        }
+
+        guard cellViewModels[row].image == nil else {
+            return cellViewModels[row]
+        }
+
+        loader.load(with: cellViewModels[row].imageURL,
+                    dataType: .image) { [weak self] (result: Result<UIImage, Error>) in
+                        self?.isLoading = false
+                        switch result {
+                        case .success(let image):
+                            self?.reloadForRow = row
+                            self?.cellViewModels[row].image = image
+                        case .failure(let error):
+                            print(error)
+                        }
+        }
+        return nil
     }
 }
 
 struct PinboardCellViewModel {
-    let image: UIImage
+    let imageURL: String
+    var image: UIImage?
+
+    init(imageURL: String, image: UIImage? = nil) {
+        self.imageURL = imageURL
+        self.image = image
+    }
 }
 
 // MARK: - PinboardCellViewModel (Helpers)
