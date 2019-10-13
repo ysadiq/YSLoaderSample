@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		31E14EA4476AFE3C3605C447 /* libPods-YSLoaderSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F781DB01DCFBFDE108038C3 /* libPods-YSLoaderSample.a */; };
 		662D51758C0ACC8F7AC5FA05 /* libPods-YSLoaderSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050E487550816DEB4C61939 /* libPods-YSLoaderSampleTests.a */; };
+		9903BC792353C060009D216E /* UIImage+assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903BC782353C060009D216E /* UIImage+assets.swift */; };
+		9903BC7C2353D61D009D216E /* PinCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903BC7B2353D61D009D216E /* PinCellViewModel.swift */; };
 		9985C5A42350A80E0089293E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A32350A80E0089293E /* Link.swift */; };
 		9985C5A62350A83B0089293E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A52350A83B0089293E /* Category.swift */; };
 		9985C5A82350A86D0089293E /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A72350A86D0089293E /* ImageURL.swift */; };
@@ -43,6 +45,8 @@
 		5F78B066C832F52202434A70 /* Pods-YSLoaderSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSample.debug.xcconfig"; path = "Target Support Files/Pods-YSLoaderSample/Pods-YSLoaderSample.debug.xcconfig"; sourceTree = "<group>"; };
 		8050E487550816DEB4C61939 /* libPods-YSLoaderSampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YSLoaderSampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		943353EAC88AE8C79183EAEB /* Pods-YSLoaderSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-YSLoaderSampleTests/Pods-YSLoaderSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9903BC782353C060009D216E /* UIImage+assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+assets.swift"; sourceTree = "<group>"; };
+		9903BC7B2353D61D009D216E /* PinCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCellViewModel.swift; sourceTree = "<group>"; };
 		9985C5A32350A80E0089293E /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		9985C5A52350A83B0089293E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9985C5A72350A86D0089293E /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9903BC7A2353D32F009D216E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9985C5A22350A7BC0089293E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				9997A3C3234DAA0400787435 /* PinboardViewModel.swift */,
+				9903BC7B2353D61D009D216E /* PinCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -164,8 +177,9 @@
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
-				9985C5B52350C7070089293E /* PinboardTableViewCell.swift */,
 				9985C5B9235192940089293E /* PinboardViewController+MBProgressHud.swift */,
+				9903BC782353C060009D216E /* UIImage+assets.swift */,
+				9903BC7A2353D32F009D216E /* Cells */,
 				9985C5AB2350AA480089293E /* ViewModels */,
 				9985C5A22350A7BC0089293E /* Models */,
 				9985C5BB235194C90089293E /* Helpers */,
@@ -347,6 +361,7 @@
 				9985C5A82350A86D0089293E /* ImageURL.swift in Sources */,
 				9985C5A42350A80E0089293E /* Link.swift in Sources */,
 				9997A3A4234D71C600787435 /* PinboardViewController.swift in Sources */,
+				9903BC7C2353D61D009D216E /* PinCellViewModel.swift in Sources */,
 				9997A3C4234DAA0400787435 /* PinboardViewModel.swift in Sources */,
 				9985C5AA2350A8AC0089293E /* User.swift in Sources */,
 				9997A3C6234DDD5C00787435 /* Pin.swift in Sources */,
@@ -355,6 +370,7 @@
 				9985C5A62350A83B0089293E /* Category.swift in Sources */,
 				9985C5B22350B05E0089293E /* Constants.swift in Sources */,
 				9985C5B62350C7070089293E /* PinboardTableViewCell.swift in Sources */,
+				9903BC792353C060009D216E /* UIImage+assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
