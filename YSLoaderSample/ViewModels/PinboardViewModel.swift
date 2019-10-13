@@ -30,9 +30,13 @@ class PinboardViewModel: NSObject {
     var updateLoadingStatus: (()->())?
     let pinSize: PinSize
 
-    init(_ loader: YSLoaderProtocol = YSLoader.shared, pinSize: PinSize = .thump) {
+    init(_ loader: YSLoaderProtocol = YSLoader.shared, pinSize: PinSize = .regular) {
         self.loader = loader
         self.pinSize = pinSize
+    }
+
+    convenience init(pinSize: PinSize) {
+        self.init(YSLoader.shared, pinSize: pinSize)
     }
 
     func fetchPins() {

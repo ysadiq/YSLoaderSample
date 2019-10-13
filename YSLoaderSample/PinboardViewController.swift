@@ -11,13 +11,12 @@ import UIKit
 class PinboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     lazy var viewModel: PinboardViewModel = {
-        return PinboardViewModel()
+        return PinboardViewModel(pinSize: .regular)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.prefetchDataSource = self
-//        tableView.dataSource = self
         // Do any additional setup after loading the view.
         initViewModel()
     }
