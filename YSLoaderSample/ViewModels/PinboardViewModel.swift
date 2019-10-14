@@ -38,8 +38,8 @@ class PinboardViewModel: NSObject {
     func fetchPins() {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.load(with: APIEndpoint.Content.pinLongList,
-                    dataType: .json) { [weak self] (result: Result<Data, Error>) in
+        loader.load(with: APIEndpoint.Content.pinsLongList,
+                    dataType: .json) { [weak self] (result: Swift.Result<Data, Error>) in
                         guard let self = self else {
                             return
                         }
@@ -91,7 +91,7 @@ class PinboardViewModel: NSObject {
 
     func fetchPinImage(forPinAt indexPath: IndexPath) {
         loader.load(with: cellViewModels[indexPath.row].imageURL,
-                    dataType: .image) {[weak self] (result: Result<UIImage, Error>) in
+                    dataType: .image) {[weak self] (result: Swift.Result<UIImage, Error>) in
                         guard let self = self else {
                             return
                         }

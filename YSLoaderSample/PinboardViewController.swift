@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import YSLoader
 
 class PinboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    lazy var viewModel: PinboardViewModel = {
-        return PinboardViewModel(pinSize: .thump)
-    }()
+    lazy var viewModel: PinboardViewModel = PinboardViewModel(YSLoader(), pinSize: .thump)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +20,6 @@ class PinboardViewController: UIViewController {
         initViewModel()
     }
 
-    /// Initialize devicePermission viewmodel
     func initViewModel() {
 
         viewModel.updateLoadingStatus = { [weak self] () in
@@ -47,6 +45,7 @@ extension PinboardViewController: UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("cell index \(indexPath.row)")
         let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell,
                                                  for: indexPath)
         guard let cellItem = cell as? PinboardTableViewCell else {

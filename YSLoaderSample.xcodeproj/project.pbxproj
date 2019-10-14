@@ -11,6 +11,9 @@
 		662D51758C0ACC8F7AC5FA05 /* libPods-YSLoaderSampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8050E487550816DEB4C61939 /* libPods-YSLoaderSampleTests.a */; };
 		9903BC792353C060009D216E /* UIImage+assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903BC782353C060009D216E /* UIImage+assets.swift */; };
 		9903BC7C2353D61D009D216E /* PinCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9903BC7B2353D61D009D216E /* PinCellViewModel.swift */; };
+		99300E682355187600044483 /* PinboardViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99300E672355187600044483 /* PinboardViewControllerTests.swift */; };
+		99300E6C235523FF00044483 /* pinStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 99300E6B235523FF00044483 /* pinStub.json */; };
+		99300E6D2355265600044483 /* pinStub.json in Resources */ = {isa = PBXBuildFile; fileRef = 99300E6B235523FF00044483 /* pinStub.json */; };
 		9985C5A42350A80E0089293E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A32350A80E0089293E /* Link.swift */; };
 		9985C5A62350A83B0089293E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A52350A83B0089293E /* Category.swift */; };
 		9985C5A82350A86D0089293E /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9985C5A72350A86D0089293E /* ImageURL.swift */; };
@@ -47,6 +50,8 @@
 		943353EAC88AE8C79183EAEB /* Pods-YSLoaderSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSLoaderSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-YSLoaderSampleTests/Pods-YSLoaderSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9903BC782353C060009D216E /* UIImage+assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+assets.swift"; sourceTree = "<group>"; };
 		9903BC7B2353D61D009D216E /* PinCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCellViewModel.swift; sourceTree = "<group>"; };
+		99300E672355187600044483 /* PinboardViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardViewControllerTests.swift; sourceTree = "<group>"; };
+		99300E6B235523FF00044483 /* pinStub.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pinStub.json; sourceTree = "<group>"; };
 		9985C5A32350A80E0089293E /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		9985C5A52350A83B0089293E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		9985C5A72350A86D0089293E /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
@@ -191,8 +196,10 @@
 		9997A3B5234D71C800787435 /* YSLoaderSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				99300E672355187600044483 /* PinboardViewControllerTests.swift */,
 				9985C5BD2351A5C20089293E /* PinboardViewModelTests.swift */,
 				9985C5BF2351AABC0089293E /* MockYSLoader.swift */,
+				99300E6B235523FF00044483 /* pinStub.json */,
 				9997A3B8234D71C800787435 /* Info.plist */,
 			);
 			path = YSLoaderSampleTests;
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9997A3AC234D71C800787435 /* LaunchScreen.storyboard in Resources */,
+				99300E6D2355265600044483 /* pinStub.json in Resources */,
 				9997A3A9234D71C800787435 /* Assets.xcassets in Resources */,
 				9997A3A7234D71C600787435 /* Main.storyboard in Resources */,
 			);
@@ -300,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99300E6C235523FF00044483 /* pinStub.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +389,7 @@
 			files = (
 				9985C5C02351AABC0089293E /* MockYSLoader.swift in Sources */,
 				9985C5BE2351A5C20089293E /* PinboardViewModelTests.swift in Sources */,
+				99300E682355187600044483 /* PinboardViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

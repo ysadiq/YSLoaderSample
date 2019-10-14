@@ -23,4 +23,10 @@ class PinboardViewModelTests: XCTestCase {
         mockYSLoader = nil
     }
 
+    func testCancelImageFetch() {
+        sut.fetchPins()
+        sut.cancelImageFetch(forPinAt: 0)
+        XCTAssertTrue(mockYSLoader.cancelIsCalled)
+    }
+
 }
