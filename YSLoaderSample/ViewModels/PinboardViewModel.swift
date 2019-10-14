@@ -11,13 +11,9 @@ import YSLoader
 class PinboardViewModel: NSObject {
     var loader: YSLoaderProtocol
     var loadingText: String = "fetching details"
-    var reloadForRow: Int? = nil
+    var delegate: PinboardViewModelDelegate?
 
-    private var cellViewModels: [PinboardCellViewModel] = [PinboardCellViewModel]() {
-        didSet {
-            self.reloadTableViewClosure?()
-        }
-    }
+    private var cellViewModels: [PinboardCellViewModel] = [PinboardCellViewModel]()
     var numberOfCells: Int {
         return cellViewModels.count
     }
@@ -42,7 +38,7 @@ class PinboardViewModel: NSObject {
     func fetchPins() {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.load(with: APIEndpoint.Content.pins,
+        loader.load(with: APIEndpoint.Content.pinLongList,
                     dataType: .json) { [weak self] (result: Result<Data, Error>) in
                         guard let self = self else {
                             return
@@ -75,6 +71,7 @@ class PinboardViewModel: NSObject {
         }
 
         cellViewModels = vms
+        delegate?.onFetchCompleted()
     }
 
     func createCellViewModel(_ pin: Pin) -> PinboardCellViewModel? {
@@ -84,11 +81,33 @@ class PinboardViewModel: NSObject {
         return PinboardCellViewModel(imageURL: imageURL)
     }
 
-    func getCellViewModel(at row: Int) -> PinboardCellViewModel? {
-        guard row < cellViewModels.count else {
+    func getCellViewModel(at indexPath: IndexPath) -> PinboardCellViewModel? {
+        guard indexPath.row < cellViewModels.count else {
             return nil
         }
 
-        return cellViewModels[row]
+        return cellViewModels[indexPath.row]
     }
+
+    func fetchPinImage(forPinAt indexPath: IndexPath) {
+        loader.load(with: cellViewModels[indexPath.row].imageURL,
+                    dataType: .image) {[weak self] (result: Result<UIImage, Error>) in
+                        guard let self = self else {
+                            return
+                        }
+                        switch result {
+                        case .success(let image):
+                            self.cellViewModels[indexPath.row].image = image
+                        case .failure:
+                            self.cellViewModels[indexPath.row].image = UIImage(asset: .notFound)
+                        }
+
+                        self.delegate?.onFetchCompleted(forItemIn: indexPath)
+        }
+    }
+}
+
+protocol PinboardViewModelDelegate {
+    func onFetchCompleted(forItemIn indexPath: IndexPath)
+    func onFetchCompleted()
 }

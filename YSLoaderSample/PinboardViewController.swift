@@ -35,18 +35,18 @@ class PinboardViewController: UIViewController {
             }
         }
 
-        viewModel.reloadTableViewClosure = { [weak self] () in
-            guard let self = self else { return }
-
-            performUIUpdatesOnMain {
-                let offset = self.tableView.contentOffset
-                self.tableView.reloadData()
-                self.tableView.layoutIfNeeded()
-                // Force layout so things are updated before resetting the contentOffset.
-                self.tableView.setContentOffset(offset, animated: false)
-            }
-        }
-
+//        viewModel.reloadTableViewClosure = { [weak self] () in
+//            guard let self = self else { return }
+//
+//            performUIUpdatesOnMain {
+//                let offset = self.tableView.contentOffset
+//                self.tableView.reloadData()
+//                self.tableView.layoutIfNeeded()
+//                // Force layout so things are updated before resetting the contentOffset.
+//                self.tableView.setContentOffset(offset, animated: false)
+//            }
+//        }
+        viewModel.delegate = self
         viewModel.fetchPins()
     }
 }
@@ -63,12 +63,18 @@ extension PinboardViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell, for: indexPath)
-        guard let cellItem = cell as? PinboardTableViewCell,
-            let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) else {
-                return cell
+        guard let cellItem = cell as? PinboardTableViewCell else {
+            return cell
         }
 
-        cellItem.configure(with: cellViewModel)
+        if isLoadingCell(for: indexPath) {
+            viewModel.fetchPinImage(forPinAt: indexPath)
+        } else {
+            guard let cellViewModel = viewModel.getCellViewModel(at: indexPath) else {
+                return cell
+            }
+            cellItem.configure(with: cellViewModel)
+        }
         return cellItem
     }
 }
@@ -77,15 +83,47 @@ extension PinboardViewController: UITableViewDataSource {
 extension PinboardViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         print("prefetchRowsAt \(indexPaths)")
-        indexPaths.forEach {
-            viewModel.getCellViewModel(at: $0.row)
+        indexPaths.forEach { indexPath in
+            viewModel.fetchPinImage(forPinAt: indexPath)
         }
     }
 
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        print("cancelPrefetchingForRowsAt \(indexPaths)")
-        indexPaths.forEach {
-            viewModel.cancelImageFetching(forPinAt: $0.row)
+//    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+//        print("cancelPrefetchingForRowsAt \(indexPaths)")
+//        indexPaths.forEach { indexPath in
+//            viewModel.cancelImageFetch(forPinAt: indexPath.row)
+//        }
+//    }
+}
+
+extension PinboardViewController: PinboardViewModelDelegate {
+    func onFetchCompleted(forItemIn indexPath: IndexPath) {
+        if tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
+            tableView.reloadRows(at: [indexPath], with: .fade)
         }
+    }
+
+    func onFetchCompleted() {
+        performUIUpdatesOnMain {
+            self.tableView.reloadData()
+        }
+    }
+
+    func onFetchFailed(with reason: String) {
+//        indicatorView.stopAnimating()
+//
+//        let title = "Warning".localizedString
+//        let action = UIAlertAction(title: "OK".localizedString, style: .default)
+//        displayAlert(with: title , message: reason, actions: [action])
+    }
+}
+
+private extension PinboardViewController {
+    func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        if viewModel.getCellViewModel(at: indexPath)?.image == nil {
+            return true
+        }
+
+        return false
     }
 }

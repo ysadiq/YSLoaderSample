@@ -11,4 +11,11 @@ import UIKit
 
 struct PinboardCellViewModel {
     let imageURL: String
+    var image: UIImage?
+
+    init(imageURL: String, image: UIImage? = nil) {
+        self.imageURL = imageURL
+        self.image = image
+    }
 }
+
