@@ -16,7 +16,7 @@ class PinboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.prefetchDataSource = self
+//        tableView.prefetchDataSource = self
         // Do any additional setup after loading the view.
         initViewModel()
     }
@@ -39,18 +39,11 @@ class PinboardViewController: UIViewController {
             guard let self = self else { return }
 
             performUIUpdatesOnMain {
-                if self.viewModel.reloadForRow == nil {
-                    let offset = self.tableView.contentOffset
-                    self.tableView.reloadData()
-                    self.tableView.layoutIfNeeded()
-                    // Force layout so things are updated before resetting the contentOffset.
-                    self.tableView.setContentOffset(offset, animated: false)
-                } else if let row = self.viewModel.reloadForRow {
-                    let indexPath = IndexPath(row: row, section: 0)
-                    if self.tableView.indexPathsForVisibleRows?.contains(indexPath) ?? false {
-                        self.tableView.reloadRows(at: [IndexPath(row: row, section: 0)], with: .fade)
-                    }
-                }
+                let offset = self.tableView.contentOffset
+                self.tableView.reloadData()
+                self.tableView.layoutIfNeeded()
+                // Force layout so things are updated before resetting the contentOffset.
+                self.tableView.setContentOffset(offset, animated: false)
             }
         }
 
@@ -70,14 +63,12 @@ extension PinboardViewController: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell, for: indexPath)
-        guard let cellItem = cell as? PinboardTableViewCell else {
-            return cell
+        guard let cellItem = cell as? PinboardTableViewCell,
+            let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) else {
+                return cell
         }
 
-        if let cellViewModel = viewModel.getCellViewModel(at: indexPath.row) {
-            cellItem.configure(with: cellViewModel)
-        }
-
+        cellItem.configure(with: cellViewModel)
         return cellItem
     }
 }

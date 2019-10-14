@@ -42,8 +42,12 @@ class PinboardViewModel: NSObject {
     func fetchPins() {
         loadingText = "Fetching Data"
         isLoading = true
-        loader.load(with: APIEndpoint.Content.pinLongList,
-                    dataType: .json) { (result: Result<Data, Error>) in
+        loader.load(with: APIEndpoint.Content.pins,
+                    dataType: .json) { [weak self] (result: Result<Data, Error>) in
+                        guard let self = self else {
+                            return
+                        }
+                        self.isLoading = false
                         switch result {
                         case .success(let json):
                             do {
@@ -80,41 +84,11 @@ class PinboardViewModel: NSObject {
         return PinboardCellViewModel(imageURL: imageURL)
     }
 
-    @discardableResult
     func getCellViewModel(at row: Int) -> PinboardCellViewModel? {
         guard row < cellViewModels.count else {
             return nil
         }
 
-        guard cellViewModels[row].image == nil else {
-            return cellViewModels[row]
-        }
-
-        loader.load(with: cellViewModels[row].imageURL,
-                    dataType: .image) { [weak self] (result: Result<UIImage, Error>) in
-                        self?.isLoading = false
-                        switch result {
-                        case .success(let image):
-                            self?.reloadForRow = row
-                            self?.cellViewModels[row].image = image
-                        case .failure(let error):
-                            print(error)
-                        }
-        }
-        return nil
+        return cellViewModels[row]
     }
-}
-
-struct PinboardCellViewModel {
-    let imageURL: String
-    var image: UIImage?
-
-    init(imageURL: String, image: UIImage? = nil) {
-        self.imageURL = imageURL
-        self.image = image
-    }
-}
-
-// MARK: - PinboardCellViewModel (Helpers)
-extension PinboardViewModel {
 }
