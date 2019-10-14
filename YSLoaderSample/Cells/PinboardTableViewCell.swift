@@ -13,6 +13,8 @@ class PinboardTableViewCell: UITableViewCell {
     @IBOutlet var pinImageView: UIImageView!
 
     func configure(with pinboardCellViewModel: PinboardCellViewModel) {
-        pinImageView.image = pinboardCellViewModel.image
+        performUIUpdatesOnMain { [weak self] in
+            self?.pinImageView.image = pinboardCellViewModel.image
+        }
     }
 }

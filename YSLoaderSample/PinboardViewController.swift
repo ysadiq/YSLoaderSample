@@ -11,12 +11,11 @@ import UIKit
 class PinboardViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     lazy var viewModel: PinboardViewModel = {
-        return PinboardViewModel(pinSize: .regular)
+        return PinboardViewModel(pinSize: .thump)
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.prefetchDataSource = self
         // Do any additional setup after loading the view.
         initViewModel()
     }
@@ -35,17 +34,6 @@ class PinboardViewController: UIViewController {
             }
         }
 
-//        viewModel.reloadTableViewClosure = { [weak self] () in
-//            guard let self = self else { return }
-//
-//            performUIUpdatesOnMain {
-//                let offset = self.tableView.contentOffset
-//                self.tableView.reloadData()
-//                self.tableView.layoutIfNeeded()
-//                // Force layout so things are updated before resetting the contentOffset.
-//                self.tableView.setContentOffset(offset, animated: false)
-//            }
-//        }
         viewModel.delegate = self
         viewModel.fetchPins()
     }
@@ -57,12 +45,9 @@ extension PinboardViewController: UITableViewDataSource {
         return viewModel.numberOfCells
     }
 
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableView.CellIdentifiers.pinboardTableViewCell,
+                                                 for: indexPath)
         guard let cellItem = cell as? PinboardTableViewCell else {
             return cell
         }
@@ -104,17 +89,9 @@ extension PinboardViewController: PinboardViewModelDelegate {
     }
 
     func onFetchCompleted() {
-        performUIUpdatesOnMain {
-            self.tableView.reloadData()
+        performUIUpdatesOnMain { [weak self] in
+            self?.tableView.reloadData()
         }
-    }
-
-    func onFetchFailed(with reason: String) {
-//        indicatorView.stopAnimating()
-//
-//        let title = "Warning".localizedString
-//        let action = UIAlertAction(title: "OK".localizedString, style: .default)
-//        displayAlert(with: title , message: reason, actions: [action])
     }
 }
 
@@ -123,7 +100,6 @@ private extension PinboardViewController {
         if viewModel.getCellViewModel(at: indexPath)?.image == nil {
             return true
         }
-
         return false
     }
 }
