@@ -28,8 +28,8 @@ public class MockYSLoader: YSLoaderProtocol {
             break
         }
     }
-
-    public func cancelRequest() {
+    
+    public func cancelRequest(with url: String) {
         cancelIsCalled = true
     }
 }

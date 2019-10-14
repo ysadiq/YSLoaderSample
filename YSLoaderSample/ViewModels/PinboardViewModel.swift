@@ -26,13 +26,13 @@ class PinboardViewModel: NSObject {
     var updateLoadingStatus: (()->())?
     let pinSize: PinSize
 
-    init(_ loader: YSLoaderProtocol = YSLoader.shared, pinSize: PinSize = .regular) {
+    init(_ loader: YSLoaderProtocol = YSLoader(), pinSize: PinSize = .regular) {
         self.loader = loader
         self.pinSize = pinSize
     }
 
     convenience init(pinSize: PinSize) {
-        self.init(YSLoader.shared, pinSize: pinSize)
+        self.init(YSLoader(), pinSize: pinSize)
     }
 
     func fetchPins() {
@@ -56,9 +56,9 @@ class PinboardViewModel: NSObject {
         }
     }
 
-    func cancelImageFetching(forPinAt index: Int) {
+    func cancelImageFetch(forPinAt index: Int) {
         let url = cellViewModels[index].imageURL
-        loader.cancelRequest(with: url)
+        loader.cancelRequest(of: url)
     }
 
     private func processFetchedPins(_ pins: [Pin]) {

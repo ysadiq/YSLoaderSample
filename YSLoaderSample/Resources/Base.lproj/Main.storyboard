@@ -66,10 +66,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="PnG-yB-UqY" id="EfO-WK-Tyz"/>
-                                    <outlet property="prefetchDataSource" destination="PnG-yB-UqY" id="8am-ii-Xeb"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -16,7 +16,8 @@ class PinboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.prefetchDataSource = self
         initViewModel()
     }
 
@@ -72,13 +73,6 @@ extension PinboardViewController: UITableViewDataSourcePrefetching {
             viewModel.fetchPinImage(forPinAt: indexPath)
         }
     }
-
-//    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-//        print("cancelPrefetchingForRowsAt \(indexPaths)")
-//        indexPaths.forEach { indexPath in
-//            viewModel.cancelImageFetch(forPinAt: indexPath.row)
-//        }
-//    }
 }
 
 extension PinboardViewController: PinboardViewModelDelegate {
