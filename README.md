@@ -4,8 +4,7 @@ This is a sample app which uses YSLoader library to to load generic data with a 
 
 ### Prerequisites
 
-Should use at least Xcode 10.
-Run on a device with at least OS 10.0
+Should use at least Xcode 10 and iOS 10.0.
 
 ## Pods used
 
