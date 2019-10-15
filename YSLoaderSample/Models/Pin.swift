@@ -38,7 +38,6 @@ class Pin: Decodable {
         case createdAt = "created_at"
         case width
         case height
-        case color
         case likes
         case isLikedByUser = "liked_by_user"
 
@@ -57,9 +56,6 @@ class Pin: Decodable {
         }
         width = try values.decodeIfPresent(Int.self, forKey: .width)
         height = try values.decodeIfPresent(Int.self, forKey: .height)
-        if let colorString = try values.decodeIfPresent(String.self, forKey: .color) {
-            color = UIColor(named: colorString)
-        }
 
         likes = try values.decodeIfPresent(Int.self, forKey: .height)
         isLikedByUser = try values.decodeIfPresent(Bool.self, forKey: .isLikedByUser)
