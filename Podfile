@@ -1,12 +1,15 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '10.0'
 
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/ysadiq/YSPodSpecs'
+
 target 'YSLoaderSample' do
   # Comment the next line if you don't want to use dynamic frameworks
     #use_frameworks!
 
   # Pods for YSLoaderSample
-    pod 'YSLoader', :path => '../libraries/YSLoader'
+    pod 'YSLoader', '~> 1.0.0'
     pod 'MBProgressHUD', '~> 1.1.0', :modular_headers => true
 
     target 'YSLoaderSampleTests' do
