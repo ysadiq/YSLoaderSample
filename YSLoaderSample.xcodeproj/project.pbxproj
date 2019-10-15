@@ -116,6 +116,30 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		99300E712355955200044483 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9985C5B9235192940089293E /* PinboardViewController+MBProgressHud.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99300E722355956500044483 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9985C5BF2351AABC0089293E /* MockYSLoader.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		99300E732355956C00044483 /* DataStubs */ = {
+			isa = PBXGroup;
+			children = (
+				99300E6B235523FF00044483 /* pinStub.json */,
+			);
+			path = DataStubs;
+			sourceTree = "<group>";
+		};
 		9985C5A22350A7BC0089293E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +175,7 @@
 		9985C5BB235194C90089293E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9903BC782353C060009D216E /* UIImage+assets.swift */,
 				9985C5B12350B05E0089293E /* Constants.swift */,
 				9985C5B72350E0F60089293E /* GCD.swift */,
 			);
@@ -182,8 +207,7 @@
 			children = (
 				9997A3A1234D71C600787435 /* AppDelegate.swift */,
 				9997A3A3234D71C600787435 /* PinboardViewController.swift */,
-				9985C5B9235192940089293E /* PinboardViewController+MBProgressHud.swift */,
-				9903BC782353C060009D216E /* UIImage+assets.swift */,
+				99300E712355955200044483 /* Extensions */,
 				9903BC7A2353D32F009D216E /* Cells */,
 				9985C5AB2350AA480089293E /* ViewModels */,
 				9985C5A22350A7BC0089293E /* Models */,
@@ -198,8 +222,8 @@
 			children = (
 				99300E672355187600044483 /* PinboardViewControllerTests.swift */,
 				9985C5BD2351A5C20089293E /* PinboardViewModelTests.swift */,
-				9985C5BF2351AABC0089293E /* MockYSLoader.swift */,
-				99300E6B235523FF00044483 /* pinStub.json */,
+				99300E722355956500044483 /* Mocks */,
+				99300E732355956C00044483 /* DataStubs */,
 				9997A3B8234D71C800787435 /* Info.plist */,
 			);
 			path = YSLoaderSampleTests;
