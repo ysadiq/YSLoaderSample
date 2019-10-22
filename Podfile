@@ -10,7 +10,7 @@ target 'YSLoaderSample' do
 
   # Pods for YSLoaderSample
     pod 'YSLoader'
-    pod 'MBProgressHUD', :modular_headers => true
+    pod 'MBProgressHUD'
 
     target 'YSLoaderSampleTests' do
         inherit! :search_paths
