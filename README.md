@@ -1,5 +1,7 @@
 # YSLoaderSample
 
+[![CI Status](https://img.shields.io/travis/ysadiq/YSLoaderSample.svg?style=flat)](https://travis-ci.org/ysadiq/YSLoaderSample)
+
 This is a sample app which uses YSLoader library to to load generic data with a maximum capcity memory cache and a limit to evict images not recently used.
 
 ### Prerequisites
