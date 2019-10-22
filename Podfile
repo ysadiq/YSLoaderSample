@@ -2,7 +2,7 @@
 platform :ios, '10.0'
 
 source 'https://cdn.cocoapods.org/'
-source 'https://github.com/ysadiq/YSPodSpecs'
+source 'https://github.com/ysadiq/YSPodSpecs.git'
 
 target 'YSLoaderSample' do
   # Comment the next line if you don't want to use dynamic frameworks
