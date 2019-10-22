@@ -1,13 +1,10 @@
 language: swift
 
 osx_image: xcode10.3
-env:
-  matrix:
-    - TEST_SDK=iphonesimulator12.4 OS=12.4 NAME='iPhone XR'
 
 script:
-  - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace YSLoaderSample.xcworkspace -scheme YSLoaderSample -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
+  - xcodebuild -scheme YSLoaderSample -workspace YSLoaderSample.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XR,OS=12.4' build test
+  #- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace YSLoaderSample.xcworkspace -scheme YSLoaderSample -sdk $TEST_SDK -destination "platform=iOS Simulator,OS=$OS,name=$NAME" ONLY_ACTIVE_ARCH=YES
   #- sonar-scanner
 after_success:
-  - slather
-  - bash <(curl -s https://codecov.io/bash) -f reports/cobertura.xml -X coveragepy -X gcov -X xcode
+  - bash <(curl -s https://codecov.io/bash)
