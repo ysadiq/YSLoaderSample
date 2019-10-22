@@ -9,8 +9,8 @@ target 'YSLoaderSample' do
     #use_frameworks!
 
   # Pods for YSLoaderSample
-    pod 'YSLoader', '~> 1.0.0'
-    pod 'MBProgressHUD', '~> 1.1.0', :modular_headers => true
+    pod 'YSLoader'
+    pod 'MBProgressHUD', :modular_headers => true
 
     target 'YSLoaderSampleTests' do
         inherit! :search_paths
