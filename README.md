@@ -14,7 +14,7 @@ Should use at least Xcode 10 and iOS 10.0.
 * [YSLoader](https://github.com/ysadiq/YSLoader/tree/master)
 * [MBProgressHud](https://github.com/jdg/MBProgressHUD)
 
-## Next Strps
+## Next Steps
 
 * Add Pull to Refresh
 * Enahnace the usage of size classes
